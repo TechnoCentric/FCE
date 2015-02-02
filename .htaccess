@@ -1,0 +1,33 @@
+#RewriteEngine on
+#RewriteCond $1 !^(index\.php|images|robots\.txt)
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule .* index.php/$0 [PT,L]
+
+RewriteEngine on
+RewriteRule ^(application|system|\.svn) index.php/$1 [L]
+RewriteCond $1 !^(index\.php|html|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+
+#<IfModule mod_rewrite.c>
+    #RewriteEngine On
+    #RewriteBase /CodeIgniter_2.0.3
+
+    ##Removes access to the system folder by users.
+    #RewriteCond %{REQUEST_URI} ^system.*
+    #RewriteRule ^(.*)$ /index.php/$1 [L]
+
+    ##Checks to see if the user is attempting to access a valid file,
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+
+    ##Enable access to the images and css folders, and the robots.txt file
+    #RewriteCond $1 !^(index\.php|public|robots\.txt)
+    #RewriteRule ^(.*)$ index.php/$1 [L]
+#</IfModule>

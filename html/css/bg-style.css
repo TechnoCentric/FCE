@@ -1,0 +1,12 @@
+body {
+	/*background: #ffffff url(../images/bg/high-school-boy-optimized.jpg) no-repeat !important;*/
+	
+	max-width: 1500px;
+	height: 690px;
+	background-color: #ffffff;
+	background-image: url(../images/bg/high-school-boy-optimized.jpg?v=3) !important;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	-moz-background-size: cover;  /* Firefox 3.6 */
+	background-position: center;  /* Internet Explorer 7/8 */
+}
